@@ -8,13 +8,13 @@ workflows:
 jobs:
   build:
     docker:
-      - image: jfusterm/stress:latest
+      - image: alpine:latest
     resource_class: crowley-namespace/container-agent-preview
     steps:
       - checkout
-      - run:
-          command: |
-            stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 60s
+      # - run:
+      #     command: |
+      #       stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 60s
       - run:
           command: |
             echo "Stress Test Done!"
