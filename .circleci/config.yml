@@ -8,7 +8,7 @@ workflows:
 jobs:
   build:
     docker:
-      - image: progrium/stress:latest
+      - image: cimg/base:2022.06
     resource_class: crowley-namespace/container-agent-preview
     steps:
       - checkout
