@@ -12,6 +12,8 @@ jobs:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASS
+     - image: cimg/mariadb:10.6
+       command: [mongod, --smallfiles]
     resource_class: crowley-namespace/container-agent-preview
     steps:
       - checkout
