@@ -8,7 +8,10 @@ workflows:
 jobs:
   build:
     docker:
-      - image: postgres:latest
+      - image: jimcrowley/container-auth-test:latest
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASS
     resource_class: crowley-namespace/container-agent-preview
     steps:
       - checkout
