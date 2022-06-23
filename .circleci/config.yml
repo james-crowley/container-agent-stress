@@ -8,7 +8,7 @@ workflows:
 jobs:
   build:
     docker:
-      - image: alpine:latest
+      - image: postgres:latest
     resource_class: crowley-namespace/container-agent-preview
     steps:
       - checkout
